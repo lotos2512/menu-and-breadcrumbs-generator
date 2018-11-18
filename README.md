@@ -60,7 +60,7 @@ children - array with nodes.
 visible - string value Node::VISIBLE_TYPE_CURRENT_PAGE, use to show the node if url is current. 
 
 ```
-##Base usage for breadcrumbs
+## Base usage for breadcrumbs
 ```
 $breadcrumbs = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
 $breadcrumbs = (new BreadcrumbsGenerator(new PrettyUrlBreadcrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
