@@ -9,7 +9,7 @@
 namespace lotos2512\menuAndBreadcrumbsGenerator;
 
 
-interface BreadChumsStrategy
+interface BreadcrumbsStrategy
 {
     /**
      * @param array $map

@@ -11,9 +11,7 @@ Example
 
 https://github.com/lotos2512/menu-and-breadcrumbs-generator/blob/master/src/example/index.php
 
-```
-Base usage for menu
-```
+## Base usage for menu
 ```
 Create array like this 
 
@@ -62,16 +60,16 @@ children - array with nodes.
 visible - string value Node::VISIBLE_TYPE_CURRENT_PAGE, use to show the node if url is current. 
 
 ```
-Base usage for breadcrumbs
+##Base usage for breadcrumbs
 ```
-$breadcrumbs = (new BreadCrumbsGenerator(new RecursiveBreadCrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
-$breadcrumbs = (new BreadCrumbsGenerator(new PrettyUrlBreadCrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
+$breadcrumbs = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
+$breadcrumbs = (new BreadcrumbsGenerator(new PrettyUrlBreadcrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
 
 use RecursiveBreadCrumbsStrategy to create $breadcrumbs for the node, even if the tree is wrong like $tree.
 ```
 
 ```
-use PrettyUrlBreadCrumbsStrategy to create $breadcrumbs for the node if $tree is true.
+use PrettyUrlBreadcrumbsStrategy to create $breadcrumbs for the node if $tree is true.
 For example you want find bread crumbs for url - '/cryptography/certificates/view/?id=1'
 your tree most be like this
 
@@ -103,3 +101,36 @@ your tree most be like this
     ],
 ]
 ```
+
+### Custom node HTML for menu 
+
+```
+/**
+ * Class YouMenuGenerator
+ */
+YouMenuGenerator extends MenuGenerator
+{
+    /**
+    * @see MenuGenerator::getHtmlBlock
+    */
+    protected function getHtmlBlockParams(Node $node, int $level): array
+    {
+        return [
+            'tdClass' => $node->quailsUrl($this->url) === true ? ' class ="select"' : ' ',
+            'menuClass' => "menu$level",
+            'url' => $node->getUrlWithParams($this->url),
+            'name' => $node->getNameWithPostFix($this->url),
+        ];
+    }
+    protected function htmlTemplate(): string
+    {
+        return
+            '<tr>
+                <td tdClass>
+                    <div class="menuClass">
+                    <a href="url">name</a>
+                    </div>
+                </td>
+            </tr>';
+    }
+}

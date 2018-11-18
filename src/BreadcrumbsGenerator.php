@@ -8,13 +8,13 @@
 
 namespace lotos2512\menuAndBreadcrumbsGenerator;
 
-class BreadCrumbsGenerator
+class BreadcrumbsGenerator
 {
     private $strategy;
     private $menuMap;
     private $url;
 
-    public function __construct(BreadChumsStrategy $strategy, string $url, array $menuMap)
+    public function __construct(BreadcrumbsStrategy $strategy, string $url, array $menuMap)
     {
         $this->strategy = $strategy;
         $this->url = $this->cleanUrlFromParams($url);

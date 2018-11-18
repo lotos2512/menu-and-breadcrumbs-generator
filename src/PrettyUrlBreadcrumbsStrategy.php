@@ -31,11 +31,11 @@ namespace lotos2512\menuAndBreadcrumbsGenerator;
     ],
 ],
  * можно использовать в фреймворках.
- * @see BreadCrumbsGenerator
+ * @see BreadcrumbsGenerator
  * Class PrettyUrlBreadCrumbsGenerator
  * @package app\menu_generator
  */
-class PrettyUrlBreadCrumbsStrategy implements BreadChumsStrategy
+class PrettyUrlBreadcrumbsStrategy implements BreadcrumbsStrategy
 {
     public function getBreadCrumbs(array $tree, string $url): array
     {
@@ -56,7 +56,7 @@ class PrettyUrlBreadCrumbsStrategy implements BreadChumsStrategy
      * @param array $urlParts
      * @return array массив с крошками
      */
-    protected function searchBreadCrumbs(array $tree, array $urlParts): array
+    private function searchBreadCrumbs(array $tree, array $urlParts): array
     {
         $result = [];
         foreach ($urlParts as $key => $action) {

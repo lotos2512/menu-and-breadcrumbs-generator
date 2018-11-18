@@ -38,7 +38,7 @@ namespace lotos2512\menuAndBreadcrumbsGenerator;
  * Class RecursiveBreadCrumbsStrategy
  * @package app\menu_generator
  */
-class RecursiveBreadCrumbsStrategy implements BreadChumsStrategy
+class RecursiveBreadcrumbsStrategy implements BreadcrumbsStrategy
 {
     protected $url;
 
@@ -59,7 +59,7 @@ class RecursiveBreadCrumbsStrategy implements BreadChumsStrategy
      * @return array
      * @throws NodeException
      */
-    protected function searchBreadCrumbs(array $tree): array
+    private function searchBreadCrumbs(array $tree): array
     {
         foreach ($tree as $key => $node) {
             $node = new Node($node);

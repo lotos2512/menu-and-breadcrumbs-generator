@@ -27,7 +27,7 @@ class MenuGenerator
      * @param string $url
      * @return string
      */
-    protected function cleanUrlFromParams(string $url): string
+    private function cleanUrlFromParams(string $url): string
     {
         $matches = [];
         preg_match_all('%^.([a-z\.]{2,6})([\/\w\.-]*)*\/?%', $url, $matches);
@@ -51,7 +51,7 @@ class MenuGenerator
      * @return string
      * @throws NodeException
      */
-    protected function generateMenu(array $tree, int $level = 0): string
+    private function generateMenu(array $tree, int $level = 0): string
     {
         $html = '';
         foreach ($tree as $key => $branch) {
@@ -74,11 +74,10 @@ class MenuGenerator
         return $html;
     }
 
-    protected function getHtmlBlock(Node $node, int $level): string
+    private function getHtmlBlock(Node $node, int $level): string
     {
         return strtr($this->htmlTemplate(), $this->getHtmlBlockParams($node, $level));
     }
-
 
     protected function getHtmlBlockParams(Node $node, int $level): array
     {

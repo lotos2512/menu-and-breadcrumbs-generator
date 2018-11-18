@@ -1,14 +1,15 @@
 <?php
 
-use lotos2512\menuAndBreadcrumbsGenerator\BreadCrumbsGenerator;
+use lotos2512\menuAndBreadcrumbsGenerator\BreadcrumbsGenerator;
 use lotos2512\menuAndBreadcrumbsGenerator\MenuGenerator;
-use lotos2512\menuAndBreadcrumbsGenerator\PrettyUrlBreadCrumbsStrategy;
-use lotos2512\menuAndBreadcrumbsGenerator\RecursiveBreadCrumbsStrategy;
+use lotos2512\menuAndBreadcrumbsGenerator\PrettyUrlBreadcrumbsStrategy;
+use lotos2512\menuAndBreadcrumbsGenerator\RecursiveBreadcrumbsStrategy;
 
 
 $menu = (new MenuGenerator('/admin/update_transaction.php', require_once "menu.php"))->getMenu();
-$breadCrumbs = (new BreadCrumbsGenerator(new RecursiveBreadCrumbsStrategy(), '/admin/update_transaction.php', require_once "menu.php"))->getBreadcrumbs();
-//$breadCrumbs = (new BreadCrumbsGenerator(new PrettyUrlBreadCrumbsStrategy(), '/admin/update_transaction.php', require_once "menu.php"))->getBreadcrumbs();
+$breadCrumbs = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/update_transaction.php', require_once "menu.php"))->getBreadcrumbs();
+// or
+$breadCrumbs = (new BreadCrumbsGenerator(new PrettyUrlBreadCrumbsStrategy(), '/admin/update_transaction.php', require_once "menu.php"))->getBreadcrumbs();
 ?>
 
 <html>
