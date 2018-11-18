@@ -7,6 +7,99 @@ Either run
  php composer.phar require lotos2512/menu-and-breadcrumbs-generator dev-master
  
 ```
-See 
+Example  
 
 https://github.com/lotos2512/menu-and-breadcrumbs-generator/blob/master/src/example/index.php
+
+```
+Base usage for menu
+```
+```
+Create array like this 
+
+$tree = [
+    /**
+     * СООБЩЕНИЯ
+     */
+    'personal_messages.php' => [
+        'name' => function () {
+            return 'Сообщений 10/10';
+        },
+        'children' => [
+            'test' => [
+                'name' => 'тest - ',
+                'url' => '/admin/test',
+                'permission' => true,
+                'params' => ['package_id'],
+                'namePostFix' => 'package_id',
+            ],
+            'test' => [
+                'name' => 'тest',
+                'url' => '/admin/test',
+                'visible' => 'onPage'
+            ],
+            
+        ]
+    ],
+];
+```
+$menu = (new MenuGenerator('current page url', $tree))->getMenu();
+```
+Definitions keys: 
+
+name - Name of node, accept sting or callback (required).
+
+url - Url of node . Accept string value.
+
+permission - Use for permission of node .Accept bool value or callback. 
+
+params - array with string values, what wiil be add to url if the node url is current.
+
+namePostFix - string value, what wiil be add to name of the node if url is current.
+
+children - array with nodes.
+
+visible - string value Node::VISIBLE_TYPE_CURRENT_PAGE, use to show the node if url is current. 
+
+```
+Base usage for breadcrumbs
+```
+$breadcrumbs = (new BreadCrumbsGenerator(new RecursiveBreadCrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
+$breadcrumbs = (new BreadCrumbsGenerator(new PrettyUrlBreadCrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
+
+use RecursiveBreadCrumbsStrategy to create $breadcrumbs for the node, even if the tree is wrong like $tree.
+```
+
+```
+use PrettyUrlBreadCrumbsStrategy to create $breadcrumbs for the node if $tree is true.
+For example you want find bread crumbs for url - '/cryptography/certificates/view/?id=1'
+your tree most be like this
+
+[
+    'cryptography' => [
+        'permission' => function () {
+            return true;
+        },
+        'name' =>'Криптография',
+        'children' => [
+            'certificates' => [
+                'name' =>'Сертификаты',
+                'url' => '/cryptography/certificates',
+                'children' => [
+                   'name' =>'Сертификат',
+                   'url' => '/cryptography/certificates/view/',
+                   'visible' => Node::VISIBLE_TYPE_CURRENT_PAGE,
+                ]
+            ],
+            'create-request' => [
+                'name' =>'Запрос сертификата',
+                'url' => '/cryptography/create-request',
+            ],
+            'upload-signed-certificates' => [
+                'name' =>'Загрузка подписанных сертификатов',
+                'url' => '/cryptography/upload-signed-certificates',
+            ]
+        ],
+    ],
+]
+```
