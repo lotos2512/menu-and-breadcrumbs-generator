@@ -64,9 +64,9 @@ class Node
         return true;
     }
 
-    public function quailsUrl(string $link): bool
+    public function quailsUrl(string $url): bool
     {
-        return $this->url === $link;
+        return $this->url === $url;
     }
 
     public function getUrl(): ?string
@@ -74,10 +74,10 @@ class Node
         return $this->url;
     }
 
-    public function getUrlWithParams(string $currentUrl): ?string
+    public function getUrlWithParams(string $url): ?string
     {
         if (($url = $this->url) !== null && $this->params !== null) {
-            if ($this->url == $currentUrl) {
+            if ($this->url == $url) {
                 $url = $this->addParamsOnUrl($url, $this->params);
             }
         }
