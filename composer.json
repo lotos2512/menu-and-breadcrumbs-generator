@@ -15,6 +15,9 @@
     "require": {
         "php": ">=7.2.0"
     },
+    "require-dev": {
+        "php": ">=7.2.0"
+    },
     "autoload": {
         "psr-4": {
             "lotos2512\\menuAndBreadcrumbsGenerator\\": "src/"
