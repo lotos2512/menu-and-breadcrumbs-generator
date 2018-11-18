@@ -20,8 +20,8 @@
     },
     "repositories": [
         {
-            "type": "git",
-            "url": "https://github.com/lotos2512/menu-and-breadcrumbs-generator.git"
+            "type": "composer",
+            "url": "https://packagist.org"
         }
     ],
     "autoload": {
