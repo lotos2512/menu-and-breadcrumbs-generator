@@ -7,8 +7,8 @@ use lotos2512\menuAndBreadcrumbsGenerator\RecursiveBreadCrumbsStrategy;
 
 
 $menu = (new MenuGenerator('/admin/update_transaction.php', require_once "menu.php"))->getMenu();
-$breadChums = (new BreadCrumbsGenerator(new RecursiveBreadCrumbsStrategy(), '/admin/update_transaction.php', require_once "menu.php"))->getBreadcrumbs();
-$breadChums = (new BreadCrumbsGenerator(new PrettyUrlBreadCrumbsStrategy(), '/admin/update_transaction.php', require_once "menu.php"))->getBreadcrumbs();
+$breadCrumbs = (new BreadCrumbsGenerator(new RecursiveBreadCrumbsStrategy(), '/admin/update_transaction.php', require_once "menu.php"))->getBreadcrumbs();
+//$breadCrumbs = (new BreadCrumbsGenerator(new PrettyUrlBreadCrumbsStrategy(), '/admin/update_transaction.php', require_once "menu.php"))->getBreadcrumbs();
 ?>
 
 <html>
@@ -148,7 +148,7 @@ $breadChums = (new BreadCrumbsGenerator(new PrettyUrlBreadCrumbsStrategy(), '/ad
     }
 </style>
 <div>
-    <?= $breadChums ?>
+    <?= $breadCrumbs ?>
 </div>
 <table width="100%" cellspacing="0" cellpadding="0" border="0">
     <tr>
