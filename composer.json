@@ -18,6 +18,12 @@
     "require-dev": {
         "php": ">=7.2.0"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/lotos2512/menu-and-breadcrumbs-generator.git"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "lotos2512\\menuAndBreadcrumbsGenerator\\": "src/"
