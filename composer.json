@@ -1,0 +1,26 @@
+{
+    "name": "lotos2512/menu-and-breadcrumbs-generator",
+    "description": "menu and breadcrumbs generator",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/lotos2512/menu-and-breadcrumbs-generator",
+    "keywords": ["menu", "breadcrumbs", "generator menu and breadcrumbs"],
+    "authors": [
+        {
+            "name": "Andrey Golikov",
+            "email": "lotos2512@mail.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "lotos2512\\menuAndBreadcrumbsGenerator\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
