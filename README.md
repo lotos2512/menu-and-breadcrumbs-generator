@@ -12,8 +12,8 @@ Example
 https://github.com/lotos2512/menu-and-breadcrumbs-generator/blob/master/src/example/index.php
 
 ## Base usage for menu
-```
-Create array like this 
+```php
+// Create array like this 
 
 $tree = [
     /**
@@ -40,7 +40,7 @@ $tree = [
         ]
     ],
 ];
-```
+
 $menu = (new MenuGenerator('current page url', $tree))->getMenu();
 ```
 Definitions keys: 
@@ -61,18 +61,16 @@ visible - string value Node::VISIBLE_TYPE_CURRENT_PAGE, use to show the node if 
 
 ```
 ## Base usage for breadcrumbs
-```
+```php
 $breadcrumbs = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
 $breadcrumbs = (new BreadcrumbsGenerator(new PrettyUrlBreadcrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
 
-use RecursiveBreadCrumbsStrategy to create $breadcrumbs for the node, even if the tree is wrong like $tree.
-```
-
+// use RecursiveBreadCrumbsStrategy to create $breadcrumbs for the node, even if the tree is wrong like $tree.
 ```
 use PrettyUrlBreadcrumbsStrategy to create $breadcrumbs for the node if $tree is true.
 For example you want find breadcrumbs for url - '/cryptography/certificates/view/?id=1'
 your tree most be like this
-
+```php
 [
     'cryptography' => [
         'permission' => function () {
@@ -104,7 +102,7 @@ your tree most be like this
 
 ### Custom node HTML for menu 
 
-```
+```php
 /**
  * Class YouMenuGenerator
  */
@@ -134,3 +132,4 @@ YouMenuGenerator extends MenuGenerator
             </tr>';
     }
 }
+```
