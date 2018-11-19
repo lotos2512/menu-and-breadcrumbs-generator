@@ -31,9 +31,9 @@ $tree = [
                 'params' => ['package_id'],
                 'namePostFix' => 'package_id',
             ],
-            'test' => [
+            'test2' => [
                 'name' => 'тest',
-                'url' => '/admin/test',
+                'url' => '/admin/test2',
                 'visible' => 'onPage'
             ],
             
@@ -47,9 +47,9 @@ Definitions keys:
 
 name - Name of node, accept sting or callback (required).
 
-url - Url of node . Accept string value.
+url - Url of node.Accept string value.
 
-permission - Use for permission of node .Accept bool value or callback. 
+permission - Use for permission of node.Accept bool value or callback. 
 
 params - array with string values, what wiil be add to url if the node url is current.
 
