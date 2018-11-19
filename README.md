@@ -41,7 +41,7 @@ $tree = [
     ],
 ];
 
-$menu = (new MenuGenerator('current page url', $tree))->getMenu();
+$menu = (new MenuGenerator('/admin/test2', $tree))->getMenu();
 ```
 Definitions keys: 
 
