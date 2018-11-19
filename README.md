@@ -59,13 +59,15 @@ children - array with nodes.
 
 visible - string value Node::VISIBLE_TYPE_CURRENT_PAGE, use to show the node if url is current. 
 
-```
-## Base usage for breadcrumbs
+Base usage for breadcrumbs 
+
 ```php
+
 $breadcrumbs = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
 $breadcrumbs = (new BreadcrumbsGenerator(new PrettyUrlBreadcrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
 
 // use RecursiveBreadCrumbsStrategy to create $breadcrumbs for the node, even if the tree is wrong like $tree.
+
 ```
 use PrettyUrlBreadcrumbsStrategy to create $breadcrumbs for the node if $tree is true.
 For example you want find breadcrumbs for url - '/cryptography/certificates/view/?id=1'
@@ -99,8 +101,7 @@ your tree most be like this
     ],
 ]
 ```
-
-### Custom node HTML for menu 
+Custom node HTML for menu 
 
 ```php
 /**
