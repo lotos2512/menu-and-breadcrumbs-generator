@@ -70,7 +70,7 @@ use RecursiveBreadCrumbsStrategy to create $breadcrumbs for the node, even if th
 
 ```
 use PrettyUrlBreadcrumbsStrategy to create $breadcrumbs for the node if $tree is true.
-For example you want find bread crumbs for url - '/cryptography/certificates/view/?id=1'
+For example you want find breadcrumbs for url - '/cryptography/certificates/view/?id=1'
 your tree most be like this
 
 [
