@@ -71,7 +71,7 @@ $breadcrumbs = (new BreadcrumbsGenerator(new PrettyUrlBreadcrumbsStrategy(), '/a
 ```
 use PrettyUrlBreadcrumbsStrategy to create $breadcrumbs for the node if $tree is true.
 For example you want find breadcrumbs for url - '/cryptography/certificates/view/?id=1'
-your tree most be like this
+your tree must be like this
 ```php
 [
     'cryptography' => [
