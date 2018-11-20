@@ -1,4 +1,4 @@
-Couchbase Extension for Yii2
+Menu andbreadcrumbs generator
 ============================
 
 [![Latest Stable Version](https://poser.pugx.org/lotos2512/menu-and-breadcrumbs-generator/v/stable)](https://packagist.org/packages/lotos2512/menu-and-breadcrumbs-generator)
