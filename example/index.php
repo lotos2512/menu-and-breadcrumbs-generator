@@ -1,15 +1,20 @@
 <?php
 
+/**
+ * use autoloader
+ */
+require(__DIR__ . '/../vendor/autoload.php');
+
 use lotos2512\menuAndBreadcrumbsGenerator\BreadcrumbsGenerator;
 use lotos2512\menuAndBreadcrumbsGenerator\MenuGenerator;
 use lotos2512\menuAndBreadcrumbsGenerator\PrettyUrlBreadcrumbsStrategy;
 use lotos2512\menuAndBreadcrumbsGenerator\RecursiveBreadcrumbsStrategy;
 
-
-$menu = (new MenuGenerator('/admin/update_transaction.php', require_once "menu.php"))->getMenu();
-$breadCrumbs = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/update_transaction.php', require_once "menu.php"))->getBreadcrumbs();
+$tree = require_once "menu.php";
+$menu = (new MenuGenerator('/admin/update_transaction.php', $tree))->getMenu();
+$breadcrumbs1 = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
 // or
-$breadCrumbs = (new BreadCrumbsGenerator(new PrettyUrlBreadCrumbsStrategy(), '/admin/payment-message/list', require_once "menu.php"))->getBreadcrumbs();
+$breadcrumbs2 = (new BreadCrumbsGenerator(new PrettyUrlBreadCrumbsStrategy(), '/admin/cryptography/upload-signed-certificates', $tree))->getBreadcrumbs();
 ?>
 
 <html>
@@ -149,7 +154,11 @@ $breadCrumbs = (new BreadCrumbsGenerator(new PrettyUrlBreadCrumbsStrategy(), '/a
     }
 </style>
 <div>
-    <?= $breadCrumbs ?>
+    <?= $breadcrumbs1 ?>
+    <br>
+    <br>
+    <br>
+    <?= $breadcrumbs2?>
 </div>
 <table width="100%" cellspacing="0" cellpadding="0" border="0">
     <tr>
