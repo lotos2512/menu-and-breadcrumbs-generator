@@ -35,8 +35,34 @@ class BreadcrumbsGeneratorTest extends TestCase
                 ]
             ]
         ];
-        $result = '<a href="./admin.">Admin</a>  / <a href="./admin/test-permission.">Test-permission</a>  / <a href="./admin/test-permission/tab1/.">tab1</a>  / ';
+        $result = '<a href="/admin">Admin</a>  / <a href="/admin/test-permission">Test-permission</a>  / <a href="/admin/test-permission/tab1/">tab1</a>  / ';
         $breadcrumbs = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/test-permission/tab1/', $tree))->getBreadcrumbs();
+        $this->assertEquals($result, $breadcrumbs);
+    }
+
+
+    public function testGenerateBreadcrumbsWithCustomSeparator()
+    {
+        $tree = [
+            'admin' => [
+                'name' => 'Admin',
+                'url' => '/admin',
+                'children' => [
+                    'test-permission' => [
+                        'name' => 'Test-permission',
+                        'url' => '/admin/test-permission',
+                        'children' => [
+                            'tab1' => [
+                                'name' => 'tab1',
+                                'url' => '/admin/test-permission/tab1/',
+                            ]
+                        ]
+                    ],
+                ]
+            ]
+        ];
+        $result = '<a href="/admin">Admin</a>  ### <a href="/admin/test-permission">Test-permission</a>  ### <a href="/admin/test-permission/tab1/">tab1</a>  ### ';
+        $breadcrumbs = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/test-permission/tab1/', $tree))->getBreadcrumbs(' ### ');
         $this->assertEquals($result, $breadcrumbs);
     }
 
@@ -61,7 +87,7 @@ class BreadcrumbsGeneratorTest extends TestCase
                 ]
             ]
         ];
-        $result = '<a href="./admin.">Admin</a>  / <a href="./admin/test-permission.">Test-permission</a>  / <a href="./admin/test-permission/tab1/.">tab1</a>  / ';
+        $result = '<a href="/admin">Admin</a>  / <a href="/admin/test-permission">Test-permission</a>  / <a href="/admin/test-permission/tab1/">tab1</a>  / ';
         $breadcrumbs = (new BreadcrumbsGenerator(new PrettyUrlBreadcrumbsStrategy(), '/admin/test-permission/tab1/', $tree))->getBreadcrumbs();
         $this->assertEquals($result, $breadcrumbs);
     }
@@ -87,7 +113,7 @@ class BreadcrumbsGeneratorTest extends TestCase
                 ]
             ]
         ];
-        $result = '<a href="./admin.">Admin</a>  / ';
+        $result = '<a href="/admin">Admin</a>  / ';
         $breadcrumbs1 = (new BreadcrumbsGenerator(new PrettyUrlBreadcrumbsStrategy(), '/admin/test-permission/tab1/', $tree))->getBreadcrumbs();
         $this->assertEquals($result, $breadcrumbs1);
     }
@@ -113,7 +139,7 @@ class BreadcrumbsGeneratorTest extends TestCase
                 ]
             ]
         ];
-        $result = '<a href="./admin.">Admin</a>  / <a href="./admin/test-permission.">Test-permission</a>  / <a href="./admin/test-permission/tab1/.">tab1</a>  / ';
+        $result = '<a href="/admin">Admin</a>  / <a href="/admin/test-permission">Test-permission</a>  / <a href="/admin/test-permission/tab1/">tab1</a>  / ';
         $breadcrumbs1 = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/test-permission/tab1/', $tree))->getBreadcrumbs();
         $this->assertEquals($result, $breadcrumbs1);
     }

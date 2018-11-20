@@ -50,7 +50,7 @@ class BreadcrumbsGenerator
         }
         foreach ($nodes as $key => $node) {
             $url = ($url = $node->getUrl()) !== null ? $url : 'javascript:void(0)';
-            $html .= "<a href=\".$url.\">{$node->getNameWithPostFix($this->url)}</a> $delimiter";
+            $html .= "<a href=\"$url\">{$node->getNameWithPostFix($this->url)}</a> $delimiter";
         }
         return $html;
     }
