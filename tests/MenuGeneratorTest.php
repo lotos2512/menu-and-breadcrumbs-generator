@@ -36,10 +36,8 @@ class MenuGeneratorTest extends TestCase
                 ]
             ]
         ];
-        try {
-            $menu = (new MenuGenerator('/admin/test-permission/tab1/', $tree))->getMenu();
-        } catch (NodeException $e) {
-        }
+        $this->expectException(NodeException::class);
+        $menu = (new MenuGenerator('/admin/test-permission/tab1/', $tree))->getMenu();
     }
 
     public function testErrorNodeRequiredAttributeNameNotExists()
@@ -61,10 +59,8 @@ class MenuGeneratorTest extends TestCase
                 ]
             ]
         ];
-        try {
-            (new MenuGenerator('/admin/test-permission/tab1/', $tree))->getMenu();
-        } catch (NodeException $e) {
-        }
+        $this->expectException(NodeException::class);
+        (new MenuGenerator('/admin/test-permission/tab1/', $tree))->getMenu();
     }
 
     public function testAvailablePermissionTab()
@@ -360,7 +356,7 @@ class MenuGeneratorTest extends TestCase
         $result = '<tr>
                 <td class ="select">
                     <div class="menu0">
-                    <a href="/admin?test1=test1&test2=test2&test3=test3">Admin show_postFix</a>
+                    <a href="/admin?test1=test1&test2=test2&test3=test3">Admin</a>
                     </div>
                 </td>
             </tr>';
