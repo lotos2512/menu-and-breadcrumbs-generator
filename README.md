@@ -1,3 +1,14 @@
+Couchbase Extension for Yii2
+============================
+
+[![Latest Stable Version](https://poser.pugx.org/lotos2512/menu-and-breadcrumbs-generator/v/stable)](https://packagist.org/packages/lotos2512/menu-and-breadcrumbs-generator)
+[![Total Downloads](https://poser.pugx.org/lotos2512/menu-and-breadcrumbs-generator/downloads)](https://packagist.org/packages/lotos2512/menu-and-breadcrumbs-generator)
+[![Latest Unstable Version](https://poser.pugx.org/lotos2512/menu-and-breadcrumbs-generator/v/unstable)](https://packagist.org/packages/lotos2512/menu-and-breadcrumbs-generator)
+[![License](https://poser.pugx.org/lotos2512/menu-and-breadcrumbs-generator/license)](https://packagist.org/packages/lotos2512/menu-and-breadcrumbs-generator)
+[![Build Status](https://travis-ci.org/lotos2512/menu-and-breadcrumbs-generator.svg?branch=master)](https://travis-ci.org/lotos2512/menu-and-breadcrumbs-generator)
+
+
+
 ## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
