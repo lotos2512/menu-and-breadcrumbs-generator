@@ -9,7 +9,7 @@ Either run
 ```
 Example  
 
-https://github.com/lotos2512/menu-and-breadcrumbs-generator/blob/master/src/example/index.php
+https://github.com/lotos2512/menu-and-breadcrumbs-generator/blob/master/example/index.php
 
 ## Base usage for menu
 ```
