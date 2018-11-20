@@ -1,4 +1,4 @@
-Menu andbreadcrumbs generator
+Menu and breadcrumbs generator
 ============================
 
 [![Latest Stable Version](https://poser.pugx.org/lotos2512/menu-and-breadcrumbs-generator/v/stable)](https://packagist.org/packages/lotos2512/menu-and-breadcrumbs-generator)
