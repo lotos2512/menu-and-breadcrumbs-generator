@@ -35,7 +35,11 @@ class Node
             throw new NodeException('required attribute not find');
         }
         foreach ($attributes as $name => $value) {
-            $this->$name = $value;
+            if (property_exists($this, $name)) {
+                $this->$name = $value;
+            } else {
+                throw new NodeException("property {{ $name }} of class ".self::class." is not exists");
+            }
         }
     }
 

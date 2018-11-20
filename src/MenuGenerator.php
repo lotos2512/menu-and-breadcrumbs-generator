@@ -82,7 +82,7 @@ class MenuGenerator
     protected function getHtmlBlockParams(Node $node, int $level): array
     {
         return [
-            'tdClass' => $node->quailsUrl($this->url) === true ? ' class ="select"' : ' ',
+            'tdClass' => $node->quailsUrl($this->url) === true ? 'class ="select"' : null,
             'menuClass' => "menu$level",
             'url' => $node->getUrlWithParams($this->url),
             'name' => $node->getNameWithPostFix($this->url),

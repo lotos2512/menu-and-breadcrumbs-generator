@@ -51,9 +51,9 @@ url - Url of node.Accept string value.
 
 permission - Use for permission of node.Accept bool value or callback. 
 
-params - array with string values, what wiil be add to url if the node url is current.
+params - array with string values, what will be add param form $_GET to url if the node url is current.
 
-namePostFix - string value, what wiil be add to name of the node if url is current.
+namePostFix - string value, what will get value from $_GET and add to name of the node if url is current.
 
 children - array with nodes.
 
