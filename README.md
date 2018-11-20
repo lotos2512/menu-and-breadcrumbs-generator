@@ -4,7 +4,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 
 Either run
 ```
- php composer.phar require lotos2512/menu-and-breadcrumbs-generator dev-master
+ php composer.phar require lotos2512/menu-and-breadcrumbs-generator
  
 ```
 Example  
@@ -12,8 +12,8 @@ Example
 https://github.com/lotos2512/menu-and-breadcrumbs-generator/blob/master/example/index.php
 
 ## Base usage for menu
-```
-Create array like this 
+```php
+// Create array like this 
 
 $tree = [
     /**
@@ -31,25 +31,25 @@ $tree = [
                 'params' => ['package_id'],
                 'namePostFix' => 'package_id',
             ],
-            'test' => [
+            'test2' => [
                 'name' => 'тest',
-                'url' => '/admin/test',
+                'url' => '/admin/test2',
                 'visible' => 'onPage'
             ],
             
         ]
     ],
 ];
-```
-$menu = (new MenuGenerator('current page url', $tree))->getMenu();
+
+$menu = (new MenuGenerator('/admin/test2', $tree))->getMenu();
 ```
 Definitions keys: 
 
 name - Name of node, accept sting or callback (required).
 
-url - Url of node . Accept string value.
+url - Url of node.Accept string value.
 
-permission - Use for permission of node .Accept bool value or callback. 
+permission - Use for permission of node.Accept bool value or callback. 
 
 params - array with string values, what wiil be add to url if the node url is current.
 
@@ -59,20 +59,20 @@ children - array with nodes.
 
 visible - string value Node::VISIBLE_TYPE_CURRENT_PAGE, use to show the node if url is current. 
 
-```
-## Base usage for breadcrumbs
-```
+Base usage for breadcrumbs 
+
+```php
+
 $breadcrumbs = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
 $breadcrumbs = (new BreadcrumbsGenerator(new PrettyUrlBreadcrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
 
-use RecursiveBreadCrumbsStrategy to create $breadcrumbs for the node, even if the tree is wrong like $tree.
-```
+// use RecursiveBreadCrumbsStrategy to create $breadcrumbs for the node, even if the tree is wrong like $tree.
 
 ```
 use PrettyUrlBreadcrumbsStrategy to create $breadcrumbs for the node if $tree is true.
-For example you want find bread crumbs for url - '/cryptography/certificates/view/?id=1'
-your tree most be like this
-
+For example you want find breadcrumbs for url - '/cryptography/certificates/view/?id=1'
+your tree must be like this
+```php
 [
     'cryptography' => [
         'permission' => function () {
@@ -101,10 +101,9 @@ your tree most be like this
     ],
 ]
 ```
+Custom node HTML for menu 
 
-### Custom node HTML for menu 
-
-```
+```php
 /**
  * Class YouMenuGenerator
  */
@@ -134,3 +133,4 @@ YouMenuGenerator extends MenuGenerator
             </tr>';
     }
 }
+```

@@ -9,7 +9,7 @@ use lotos2512\menuAndBreadcrumbsGenerator\RecursiveBreadcrumbsStrategy;
 $menu = (new MenuGenerator('/admin/update_transaction.php', require_once "menu.php"))->getMenu();
 $breadCrumbs = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/update_transaction.php', require_once "menu.php"))->getBreadcrumbs();
 // or
-$breadCrumbs = (new BreadCrumbsGenerator(new PrettyUrlBreadCrumbsStrategy(), '/admin/update_transaction.php', require_once "menu.php"))->getBreadcrumbs();
+$breadCrumbs = (new BreadCrumbsGenerator(new PrettyUrlBreadCrumbsStrategy(), '/admin/payment-message/list', require_once "menu.php"))->getBreadcrumbs();
 ?>
 
 <html>
