@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1542793753">
+  <project timestamp="1542793753">
+    <package name="lotos2512\menuAndBreadcrumbsGenerator">
+      <file name="/vagrant/libs/menu-and-breadcrumbs-generator/src/BreadcrumbsGenerator.php">
+        <class name="lotos2512\menuAndBreadcrumbsGenerator\BreadcrumbsGenerator" namespace="lotos2512\menuAndBreadcrumbsGenerator">
+          <metrics complexity="7" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="14" elements="19" coveredelements="17"/>
+        </class>
+        <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="19" type="stmt" count="5"/>
+        <line num="20" type="stmt" count="5"/>
+        <line num="21" type="stmt" count="5"/>
+        <line num="22" type="stmt" count="5"/>
+        <line num="24" type="method" name="getBreadcrumbs" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="26" type="stmt" count="5"/>
+        <line num="33" type="method" name="cleanUrlFromParams" visibility="protected" complexity="1" crap="1" count="5"/>
+        <line num="35" type="stmt" count="5"/>
+        <line num="36" type="stmt" count="5"/>
+        <line num="37" type="stmt" count="5"/>
+        <line num="45" type="method" name="generateBreadCrumbs" visibility="protected" complexity="4" crap="4.05" count="5"/>
+        <line num="47" type="stmt" count="5"/>
+        <line num="48" type="stmt" count="5"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="5"/>
+        <line num="52" type="stmt" count="5"/>
+        <line num="53" type="stmt" count="5"/>
+        <line num="55" type="stmt" count="5"/>
+        <metrics loc="56" ncloc="41" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="14" elements="19" coveredelements="17"/>
+      </file>
+      <file name="/vagrant/libs/menu-and-breadcrumbs-generator/src/MenuGenerator.php">
+        <class name="lotos2512\menuAndBreadcrumbsGenerator\MenuGenerator" namespace="lotos2512\menuAndBreadcrumbsGenerator" fullPackage="app" package="app">
+          <metrics complexity="14" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="26" elements="34" coveredelements="32"/>
+        </class>
+        <line num="20" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="12"/>
+        <line num="22" type="stmt" count="12"/>
+        <line num="23" type="stmt" count="12"/>
+        <line num="24" type="stmt" count="12"/>
+        <line num="30" type="method" name="cleanUrlFromParams" visibility="private" complexity="1" crap="1" count="12"/>
+        <line num="32" type="stmt" count="12"/>
+        <line num="33" type="stmt" count="12"/>
+        <line num="34" type="stmt" count="12"/>
+        <line num="42" type="method" name="getMenu" visibility="public" complexity="1" crap="1" count="12"/>
+        <line num="44" type="stmt" count="12"/>
+        <line num="54" type="method" name="generateMenu" visibility="private" complexity="7" crap="7.02" count="12"/>
+        <line num="56" type="stmt" count="12"/>
+        <line num="57" type="stmt" count="12"/>
+        <line num="58" type="stmt" count="12"/>
+        <line num="59" type="stmt" count="11"/>
+        <line num="60" type="stmt" count="11"/>
+        <line num="61" type="stmt" count="11"/>
+        <line num="62" type="stmt" count="11"/>
+        <line num="63" type="stmt" count="7"/>
+        <line num="64" type="stmt" count="6"/>
+        <line num="65" type="stmt" count="4"/>
+        <line num="67" type="stmt" count="3"/>
+        <line num="68" type="stmt" count="0"/>
+        <line num="72" type="stmt" count="10"/>
+        <line num="74" type="stmt" count="10"/>
+        <line num="77" type="method" name="getHtmlBlock" visibility="private" complexity="1" crap="1" count="11"/>
+        <line num="79" type="stmt" count="11"/>
+        <line num="82" type="method" name="getHtmlBlockParams" visibility="protected" complexity="2" crap="2" count="11"/>
+        <line num="85" type="stmt" count="11"/>
+        <line num="86" type="stmt" count="11"/>
+        <line num="87" type="stmt" count="11"/>
+        <line num="88" type="stmt" count="11"/>
+        <line num="93" type="method" name="htmlTemplate" visibility="protected" complexity="1" crap="1" count="11"/>
+        <line num="96" type="stmt" count="11"/>
+        <metrics loc="104" ncloc="80" classes="1" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="26" elements="34" coveredelements="32"/>
+      </file>
+      <file name="/vagrant/libs/menu-and-breadcrumbs-generator/src/Node.php">
+        <class name="lotos2512\menuAndBreadcrumbsGenerator\Node" namespace="lotos2512\menuAndBreadcrumbsGenerator" fullPackage="app" package="app">
+          <metrics complexity="30" methods="11" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="39" coveredstatements="35" elements="50" coveredelements="45"/>
+        </class>
+        <line num="32" type="method" name="__construct" visibility="public" complexity="4" crap="4" count="17"/>
+        <line num="34" type="stmt" count="17"/>
+        <line num="35" type="stmt" count="1"/>
+        <line num="37" type="stmt" count="16"/>
+        <line num="38" type="stmt" count="16"/>
+        <line num="39" type="stmt" count="16"/>
+        <line num="41" type="stmt" count="16"/>
+        <line num="44" type="stmt" count="16"/>
+        <line num="49" type="method" name="isAvailable" visibility="public" complexity="3" crap="3" count="14"/>
+        <line num="51" type="stmt" count="14"/>
+        <line num="52" type="stmt" count="3"/>
+        <line num="53" type="stmt" count="2"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="58" type="stmt" count="14"/>
+        <line num="61" type="method" name="isVisible" visibility="public" complexity="4" crap="4" count="14"/>
+        <line num="63" type="stmt" count="14"/>
+        <line num="64" type="stmt" count="2"/>
+        <line num="65" type="stmt" count="2"/>
+        <line num="68" type="stmt" count="14"/>
+        <line num="71" type="method" name="quailsUrl" visibility="public" complexity="1" crap="1" count="14"/>
+        <line num="73" type="stmt" count="14"/>
+        <line num="76" type="method" name="getUrl" visibility="public" complexity="2" crap="2" count="8"/>
+        <line num="78" type="stmt" count="8"/>
+        <line num="81" type="method" name="getUrlWithParams" visibility="public" complexity="5" crap="5" count="11"/>
+        <line num="83" type="stmt" count="11"/>
+        <line num="84" type="stmt" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="88" type="stmt" count="11"/>
+        <line num="97" type="method" name="addParamsOnUrl" visibility="protected" complexity="3" crap="3" count="1"/>
+        <line num="99" type="stmt" count="1"/>
+        <line num="100" type="stmt" count="1"/>
+        <line num="101" type="stmt" count="1"/>
+        <line num="102" type="stmt" count="1"/>
+        <line num="105" type="stmt" count="1"/>
+        <line num="108" type="method" name="getName" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="110" type="stmt" count="0"/>
+        <line num="111" type="stmt" count="0"/>
+        <line num="113" type="stmt" count="0"/>
+        <line num="115" type="stmt" count="0"/>
+        <line num="118" type="method" name="getNameWithPostFix" visibility="public" complexity="4" crap="4" count="16"/>
+        <line num="120" type="stmt" count="16"/>
+        <line num="121" type="stmt" count="1"/>
+        <line num="123" type="stmt" count="15"/>
+        <line num="125" type="stmt" count="16"/>
+        <line num="126" type="stmt" count="1"/>
+        <line num="128" type="stmt" count="16"/>
+        <line num="131" type="method" name="hasChildren" visibility="public" complexity="1" crap="1" count="14"/>
+        <line num="133" type="stmt" count="14"/>
+        <line num="136" type="method" name="getChildren" visibility="public" complexity="1" crap="1" count="10"/>
+        <line num="138" type="stmt" count="10"/>
+        <metrics loc="139" ncloc="115" classes="1" methods="11" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="39" coveredstatements="35" elements="50" coveredelements="45"/>
+      </file>
+      <file name="/vagrant/libs/menu-and-breadcrumbs-generator/src/NodeException.php">
+        <class name="lotos2512\menuAndBreadcrumbsGenerator\NodeException" namespace="lotos2512\menuAndBreadcrumbsGenerator">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="14" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="/vagrant/libs/menu-and-breadcrumbs-generator/src/PrettyUrlBreadcrumbsStrategy.php">
+        <class name="lotos2512\menuAndBreadcrumbsGenerator\PrettyUrlBreadcrumbsStrategy" namespace="lotos2512\menuAndBreadcrumbsGenerator" fullPackage="app" package="app">
+          <metrics complexity="7" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="18" coveredelements="18"/>
+        </class>
+        <line num="40" type="method" name="getBreadCrumbs" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="42" type="stmt" count="2"/>
+        <line num="43" type="stmt" count="2"/>
+        <line num="44" type="stmt" count="2"/>
+        <line num="46" type="stmt" count="2"/>
+        <line num="47" type="method" name="anonymousFunction:47#102" complexity="1" crap="1" count="2"/>
+        <line num="48" type="stmt" count="2"/>
+        <line num="49" type="stmt" count="2"/>
+        <line num="50" type="stmt" count="2"/>
+        <line num="59" type="method" name="searchBreadCrumbs" visibility="private" complexity="4" crap="4" count="2"/>
+        <line num="61" type="stmt" count="2"/>
+        <line num="62" type="stmt" count="2"/>
+        <line num="63" type="stmt" count="2"/>
+        <line num="64" type="stmt" count="2"/>
+        <line num="65" type="stmt" count="2"/>
+        <line num="66" type="stmt" count="2"/>
+        <line num="67" type="stmt" count="2"/>
+        <line num="70" type="stmt" count="2"/>
+        <line num="73" type="stmt" count="2"/>
+        <metrics loc="74" ncloc="35" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="19" coveredelements="19"/>
+      </file>
+      <file name="/vagrant/libs/menu-and-breadcrumbs-generator/src/RecursiveBreadcrumbsStrategy.php">
+        <class name="lotos2512\menuAndBreadcrumbsGenerator\RecursiveBreadcrumbsStrategy" namespace="lotos2512\menuAndBreadcrumbsGenerator" fullPackage="app" package="app">
+          <metrics complexity="8" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="12" elements="15" coveredelements="13"/>
+        </class>
+        <line num="51" type="method" name="getBreadCrumbs" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="53" type="stmt" count="3"/>
+        <line num="54" type="stmt" count="3"/>
+        <line num="62" type="method" name="searchBreadCrumbs" visibility="private" complexity="7" crap="7.04" count="3"/>
+        <line num="64" type="stmt" count="3"/>
+        <line num="65" type="stmt" count="3"/>
+        <line num="66" type="stmt" count="3"/>
+        <line num="67" type="stmt" count="3"/>
+        <line num="69" type="stmt" count="3"/>
+        <line num="70" type="stmt" count="3"/>
+        <line num="72" type="stmt" count="3"/>
+        <line num="73" type="stmt" count="3"/>
+        <line num="74" type="stmt" count="3"/>
+        <line num="75" type="stmt" count="3"/>
+        <line num="79" type="stmt" count="0"/>
+        <metrics loc="80" ncloc="33" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="12" elements="15" coveredelements="13"/>
+      </file>
+    </package>
+    <file name="/vagrant/libs/menu-and-breadcrumbs-generator/src/BreadcrumbsStrategy.php">
+      <metrics loc="19" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <metrics files="7" loc="486" ncloc="320" classes="5" methods="27" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="110" coveredstatements="103" elements="137" coveredelements="126"/>
+  </project>
+</coverage>
