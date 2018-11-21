@@ -1,6 +1,8 @@
 Menu and breadcrumbs generator
 ============================
 
+Generate HTML menu and breadcrumbs from php array
+  
 [![Latest Stable Version](https://poser.pugx.org/lotos2512/menu-and-breadcrumbs-generator/v/stable)](https://packagist.org/packages/lotos2512/menu-and-breadcrumbs-generator)
 [![Total Downloads](https://poser.pugx.org/lotos2512/menu-and-breadcrumbs-generator/downloads)](https://packagist.org/packages/lotos2512/menu-and-breadcrumbs-generator)
 [![Latest Unstable Version](https://poser.pugx.org/lotos2512/menu-and-breadcrumbs-generator/v/unstable)](https://packagist.org/packages/lotos2512/menu-and-breadcrumbs-generator)
