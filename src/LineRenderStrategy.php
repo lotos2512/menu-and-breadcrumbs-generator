@@ -11,7 +11,7 @@ namespace lotos2512\menuAndBreadcrumbsGenerator;
 
 class LineRenderStrategy extends RenderStrategy
 {
-    public function getHtmlBlock(Node $node, int $level, string $currentUrl): string
+    public function getHtmlBlock(Node $node, int $level, string $currentUrl) : string
     {
         return strtr(
             $this->htmlTemplate(), [
@@ -22,7 +22,7 @@ class LineRenderStrategy extends RenderStrategy
         ]);
     }
 
-    protected function htmlTemplate(): string
+    protected function htmlTemplate() : string
     {
         return
             '<tr>
@@ -32,10 +32,5 @@ class LineRenderStrategy extends RenderStrategy
                     </div>
                 </td>
             </tr>';
-    }
-
-    public function decorateChildHtml(string $html): string
-    {
-        return $html;
     }
 }
