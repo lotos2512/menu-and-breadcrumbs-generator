@@ -16,9 +16,11 @@ class MenuGenerator
 {
     private $menuMap;
     private $url;
+    private $renderStrategy;
 
-    public function __construct(string $url, array $menuMap)
+    public function __construct(RenderStrategy $renderStrategy,string $url, array $menuMap)
     {
+        $this->renderStrategy = $renderStrategy;
         $this->menuMap = $menuMap;
         $this->url = $this->cleanUrlFromParams($url);
     }
@@ -27,7 +29,7 @@ class MenuGenerator
      * @param string $url
      * @return string
      */
-    private function cleanUrlFromParams(string $url): string
+    private function cleanUrlFromParams(string $url) : string
     {
         $matches = [];
         preg_match_all('%^.([a-z\.]{2,6})([\/\w\.-]*)*\/?%', $url, $matches);
@@ -39,7 +41,7 @@ class MenuGenerator
      * @return string
      * @throws NodeException
      */
-    public function getMenu(): string
+    public function getMenu() : string
     {
         return $this->generateMenu($this->menuMap);
     }
@@ -51,18 +53,22 @@ class MenuGenerator
      * @return string
      * @throws NodeException
      */
-    private function generateMenu(array $tree, int $level = 0): string
+    private function generateMenu(array $tree, int $level = 0) : string
     {
         $html = '';
         foreach ($tree as $key => $branch) {
             $node = new Node($branch);
             if ($node->isVisible($this->url) === false) continue;
             if ($node->isAvailable() === false) continue;
-            $localHtml = $this->getHtmlBlock($node, $level);
+
+            $localHtml = $this->renderStrategy->getHtmlBlock($node, $level, $this->url);
             if ($node->hasChildren()) {
                 $childHtml = $this->generateMenu($node->getChildren(), $level + 1);
-                if (strlen($childHtml)) {
+                if (!empty($childHtml)) {
+                    $localHtml .= "<ul>";
                     $localHtml .= $childHtml;
+                    $localHtml .= "</ul>";
+                    $localHtml .= "</li>";
                 } else {
                     if ($node->getUrl() === null) {
                         $localHtml = '';
@@ -73,33 +79,4 @@ class MenuGenerator
         }
         return $html;
     }
-
-    private function getHtmlBlock(Node $node, int $level): string
-    {
-        return strtr($this->htmlTemplate(), $this->getHtmlBlockParams($node, $level));
-    }
-
-    protected function getHtmlBlockParams(Node $node, int $level): array
-    {
-        return [
-            'tdClass' => $node->quailsUrl($this->url) === true ? 'class ="select"' : null,
-            'menuClass' => "menu$level",
-            'url' => $node->getUrlWithParams($this->url),
-            'name' => $node->getNameWithPostFix($this->url),
-        ];
-    }
-
-
-    protected function htmlTemplate(): string
-    {
-        return
-            '<tr>
-                <td tdClass>
-                    <div class="menuClass">
-                    <a href="url">name</a>
-                    </div>
-                </td>
-            </tr>';
-    }
-
 }
