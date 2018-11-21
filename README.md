@@ -118,7 +118,7 @@ Custom node HTML for menu
 /**
  * Class YouMenuGenerator
  */
-YouMenuGenerator extends MenuGenerator
+YourMenuGenerator extends MenuGenerator
 {
     /**
     * @see MenuGenerator::getHtmlBlock
