@@ -7,12 +7,12 @@ require(__DIR__ . '/../vendor/autoload.php');
 
 use lotos2512\menuAndBreadcrumbsGenerator\BreadcrumbsGenerator;
 use lotos2512\menuAndBreadcrumbsGenerator\MenuGenerator;
-use lotos2512\menuAndBreadcrumbsGenerator\PrettyUrlBreadcrumbsStrategy;
-use lotos2512\menuAndBreadcrumbsGenerator\TreeRenderStrategy;
+use lotos2512\menuAndBreadcrumbsGenerator\RecursiveBreadcrumbsStrategy;
+use lotos2512\menuAndBreadcrumbsGenerator\LineRenderStrategy;
 
 $tree = require_once "menu.php";
-$menu = (new MenuGenerator(new TreeRenderStrategy(), '/admin/cryptography/upload-signed-certificates', $tree))->getMenu();
-$breadcrumbs1 = (new BreadcrumbsGenerator(new PrettyUrlBreadcrumbsStrategy(), '/admin/cryptography/upload-signed-certificates', $tree))->getBreadcrumbs();
+$menu = (new MenuGenerator(new LineRenderStrategy(), '/admin/update_transaction.php', $tree))->getMenu();
+$breadcrumbs1 = (new BreadcrumbsGenerator(new RecursiveBreadcrumbsStrategy(), '/admin/update_transaction.php', $tree))->getBreadcrumbs();
 ?>
 
 <html>
@@ -153,10 +153,6 @@ $breadcrumbs1 = (new BreadcrumbsGenerator(new PrettyUrlBreadcrumbsStrategy(), '/
 </style>
 <div>
     <?= $breadcrumbs1 ?>
-    <br>
-    <br>
-    <br>
-    <?= $breadcrumbs2 ?>
 </div>
 <table width="100%" cellspacing="0" cellpadding="0" border="0">
     <tr>

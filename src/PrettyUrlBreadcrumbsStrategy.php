@@ -10,26 +10,26 @@ namespace lotos2512\menuAndBreadcrumbsGenerator;
 
 /**
  * работает только с деревьями формата
-'cryptography' => [
-    'permission' => function () {
-        return true;
-    },
-    'name' =>'Криптография',
-    'children' => [
-        'certificates' => [
-            'name' =>'Сертификаты',
-            'url' => '/admin/cryptography/certificates',
-        ],
-        'create-request' => [
-            'name' =>'Запрос сертификата',
-            'url' => '/admin/cryptography/create-request',
-        ],
-        'upload-signed-certificates' => [
-            'name' =>'Загрузка подписанных сертификатов',
-            'url' => '/admin/cryptography/upload-signed-certificates',
-        ]
-    ],
-],
+ * 'cryptography' => [
+ * 'permission' => function () {
+ * return true;
+ * },
+ * 'name' =>'Криптография',
+ * 'children' => [
+ * 'certificates' => [
+ * 'name' =>'Сертификаты',
+ * 'url' => '/admin/cryptography/certificates',
+ * ],
+ * 'create-request' => [
+ * 'name' =>'Запрос сертификата',
+ * 'url' => '/admin/cryptography/create-request',
+ * ],
+ * 'upload-signed-certificates' => [
+ * 'name' =>'Загрузка подписанных сертификатов',
+ * 'url' => '/admin/cryptography/upload-signed-certificates',
+ * ]
+ * ],
+ * ],
  * можно использовать в фреймворках.
  * @see BreadcrumbsGenerator
  * Class PrettyUrlBreadCrumbsGenerator

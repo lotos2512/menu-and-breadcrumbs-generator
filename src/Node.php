@@ -38,7 +38,7 @@ class Node
             if (property_exists($this, $name)) {
                 $this->$name = $value;
             } else {
-                throw new NodeException("property {{ $name }} of class ".self::class." is not exists");
+                throw new NodeException("property {{ $name }} of class " . self::class . " is not exists");
             }
         }
     }

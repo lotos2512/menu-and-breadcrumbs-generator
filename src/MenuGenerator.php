@@ -16,9 +16,11 @@ class MenuGenerator
 {
     private $menuMap;
     private $url;
+    private $renderStrategy;
 
-    public function __construct(string $url, array $menuMap)
+    public function __construct(RenderStrategy $renderStrategy, string $url, array $menuMap)
     {
+        $this->renderStrategy = $renderStrategy;
         $this->menuMap = $menuMap;
         $this->url = $this->cleanUrlFromParams($url);
     }
@@ -58,11 +60,11 @@ class MenuGenerator
             $node = new Node($branch);
             if ($node->isVisible($this->url) === false) continue;
             if ($node->isAvailable() === false) continue;
-            $localHtml = $this->getHtmlBlock($node, $level);
+            $localHtml = $this->renderStrategy->getHtmlBlock($node, $level, $this->url);
             if ($node->hasChildren()) {
                 $childHtml = $this->generateMenu($node->getChildren(), $level + 1);
                 if (strlen($childHtml)) {
-                    $localHtml .= $childHtml;
+                    $localHtml .= $this->renderStrategy->decorateChildHtml($childHtml);
                 } else {
                     if ($node->getUrl() === null) {
                         $localHtml = '';
@@ -73,33 +75,4 @@ class MenuGenerator
         }
         return $html;
     }
-
-    private function getHtmlBlock(Node $node, int $level): string
-    {
-        return strtr($this->htmlTemplate(), $this->getHtmlBlockParams($node, $level));
-    }
-
-    protected function getHtmlBlockParams(Node $node, int $level): array
-    {
-        return [
-            'tdClass' => $node->quailsUrl($this->url) === true ? 'class ="select"' : null,
-            'menuClass' => "menu$level",
-            'url' => $node->getUrlWithParams($this->url),
-            'name' => $node->getNameWithPostFix($this->url),
-        ];
-    }
-
-
-    protected function htmlTemplate(): string
-    {
-        return
-            '<tr>
-                <td tdClass>
-                    <div class="menuClass">
-                    <a href="url">name</a>
-                    </div>
-                </td>
-            </tr>';
-    }
-
 }

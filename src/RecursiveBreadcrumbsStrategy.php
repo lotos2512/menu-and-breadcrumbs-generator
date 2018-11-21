@@ -10,31 +10,31 @@ namespace lotos2512\menuAndBreadcrumbsGenerator;
 
 /**
  * Использует рекурсивный поиск в глубь для нахождния крошек, будет работать с либым форматом
-[
-    'instructions.php' => [
-        'url' => '/admin/instructions.php',
-        'name' =>'Инструкции',
-    ],
-    'cryptography' => [
-    'permission' => function () {
-        return true;
-    },
-    'name' =>'Криптография',
-    'children' => [
-        'certificates' => [
-            'name' =>'Сертификаты',
-            'url' => '/admin/cryptography/certificates',
-        ],
-        'create-request' => [
-            'name' =>'Запрос сертификата',
-            'url' => '/admin/cryptography/create-request',
-        ],
-        'upload-signed-certificates' => [
-            'name' =>'Загрузка подписанных сертификатов',
-            'url' => '/admin/cryptography/upload-signed-certificates',
-        ]
-    ],
-],
+ * [
+ * 'instructions.php' => [
+ * 'url' => '/admin/instructions.php',
+ * 'name' =>'Инструкции',
+ * ],
+ * 'cryptography' => [
+ * 'permission' => function () {
+ * return true;
+ * },
+ * 'name' =>'Криптография',
+ * 'children' => [
+ * 'certificates' => [
+ * 'name' =>'Сертификаты',
+ * 'url' => '/admin/cryptography/certificates',
+ * ],
+ * 'create-request' => [
+ * 'name' =>'Запрос сертификата',
+ * 'url' => '/admin/cryptography/create-request',
+ * ],
+ * 'upload-signed-certificates' => [
+ * 'name' =>'Загрузка подписанных сертификатов',
+ * 'url' => '/admin/cryptography/upload-signed-certificates',
+ * ]
+ * ],
+ * ],
  * Class RecursiveBreadCrumbsStrategy
  * @package app\menu_generator
  */
