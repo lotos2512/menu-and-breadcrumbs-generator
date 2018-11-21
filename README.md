@@ -6,7 +6,7 @@ Menu and breadcrumbs generator
 [![Latest Unstable Version](https://poser.pugx.org/lotos2512/menu-and-breadcrumbs-generator/v/unstable)](https://packagist.org/packages/lotos2512/menu-and-breadcrumbs-generator)
 [![License](https://poser.pugx.org/lotos2512/menu-and-breadcrumbs-generator/license)](https://packagist.org/packages/lotos2512/menu-and-breadcrumbs-generator)
 [![Build Status](https://travis-ci.org/lotos2512/menu-and-breadcrumbs-generator.svg?branch=master)](https://travis-ci.org/lotos2512/menu-and-breadcrumbs-generator)
-[![Coverage Status](https://coveralls.io/repos/github/lotos2512/menu-and-breadcrumbs-generator/badge.svg?branch=master)](https://coveralls.io/github/lotos2512/menu-and-breadcrumbs-generator?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/lotos2512/menu-and-breadcrumbs-generator/badge.svg)](https://coveralls.io/github/lotos2512/menu-and-breadcrumbs-generator)
 
 
 ## Installation
